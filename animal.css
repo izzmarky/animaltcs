@@ -1,0 +1,71 @@
+ body {
+        background-color: rgb(201, 192, 116);
+        display: inline;
+
+        }
+
+        h1{
+            text-align: center;
+            font-size: medium;
+            font-style: italic;
+            border: 2px dotted;
+            border-radius: 20px;
+            background-color: rgb(209, 209, 209);
+        }
+
+        p {
+            text-align: center;
+            text-rendering: auto;
+            text-size-adjust: 20cm;
+            font-style: italic;
+            border: 2px;
+            background-color: white;
+        }
+
+
+        .card1 {
+            height: 500px;
+            width: 300px;
+            display: inline-table;
+            border: 5px solid;
+            background-color: aquamarine;
+            
+        }
+
+        .sea {
+            height: 300px;
+            width: 300px;
+            padding: 15px;
+        }
+
+        .land {
+            height: 300x;
+            width: 300px;
+            padding: 15px;
+        }
+
+        .air {
+            height: 300px;
+            width: 300px;
+            padding: 15px;
+        }
+
+        .card2 {
+            height: 500px;
+            width: 300px;
+            display: inline-table;
+            border: 5px solid;
+            background-color: greenyellow;
+        }
+
+        .card3 {
+            height: 500px;
+            width: 300px;
+            display: inline-table;
+            border: 5px solid;
+            background-color: rgba(245, 245, 245, 0.74);
+        }
+
+        ul {
+            list-style: none;
+        }
