@@ -1,0 +1,262 @@
+ body {
+        background-color: rgb(201, 192, 116);
+        display: inline;
+
+        }
+        header{
+            text-align: center;
+            font-size: 45px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: italic;
+            border: 5px solid;
+            border-radius: 10px;
+            background-color: rgb(247, 233, 40);
+            padding: 10px;
+            margin: 10px;
+            width: auto;
+            height: 50px;
+        }
+
+        h1{
+            text-align: center;
+            font-size: medium;
+            font-style: italic;
+            border: 2px dotted;
+            border-radius: 20px;
+            background-color: rgb(209, 209, 209);
+        }
+
+        p {
+            text-align: center;
+            text-rendering: auto;
+            text-size-adjust: 20cm;
+            font-style: italic;
+            border: 2px;
+            background-color: white;
+        }
+
+
+        .card1 {
+            height: 500px;
+            width: 300px;
+            display: inline-table;
+            border: 5px solid;
+            background-color: rgb(55, 211, 185);
+            
+        }
+
+        .sea {
+            height: 300px;
+            width: 300px;
+            padding: 15px;
+        }
+
+        .land {
+            height: 300x;
+            width: 300px;
+            padding: 15px;
+        }
+
+        .air {
+            height: 300px;
+            width: 300px;
+            padding: 15px;
+        }
+
+        .card2 {
+            height: 500px;
+            width: 300px;
+            display: inline-table;
+            border: 5px solid;
+            background-color: greenyellow;
+        }
+
+        .card3 {
+            height: 500px;
+            width: 300px;
+            display: inline-table;
+            border: 5px solid;
+            background-color: rgba(245, 245, 245, 0.74);
+        }
+
+        .card4 {
+            height: 500px;
+            width: 300px;
+            display: inline-table;
+            border: 5px solid;
+            background: linear-gradient(145deg, rgb(47, 239, 253) 0%, #7fffd4 25%, #adff2f 75%, rgb(20, 139, 9) 100%);
+        }
+
+        .sea-land {
+            height: 300px;
+            width: 300px;
+            padding: 15px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Holographic effect and zoom on hover for only .holo cards */
+        /* Holographic effect and zoom on hover for .holo cards */
+        .holo {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.2);
+            transition: transform 0.3s cubic-bezier(0.4,2,0.6,1), box-shadow 0.3s;
+            /* Holographic gradient background */
+            background: linear-gradient(135deg, #e0e7ff 0%, #fbc2eb 25%, #a1c4fd 50%, #fbc2eb 75%, #e0e7ff 100%);
+            background-size: 200% 200%;
+            animation: holoMove 3s linear infinite;
+        }
+
+        .holo::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+                radial-gradient(2px 2px at 40px 70px, #fff, transparent),
+                radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+                radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+                radial-gradient(2px 2px at 160px 30px, #fff, transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 3;
+        }
+
+        .holo:hover::after {
+            opacity: .75;
+            animation: sparkle 25s ease-in-out infinite, shimmer 2s ease-in-out infinite;
+        }
+
+        @keyframes holoMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes shimmer {
+            0%, 100% {
+                opacity: 0.75;
+                filter: brightness(1);
+            }
+            50% {
+                opacity: 1;
+                filter: brightness(1.5);
+            }
+        }
+
+        .holo:hover {
+            transform: scale(1.08) rotateZ(-1deg);
+            box-shadow: 0 8px 40px 0 rgba(0,0,0,0.35), 0 0 32px 8px #fff7;
+            z-index: 2;
+        }
+
+        .holo::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            background: linear-gradient(120deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 60%, rgba(255,255,255,0.3) 100%);
+            mix-blend-mode: lighten;
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        .holo > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Zoom on hover for all cards */
+        .card1, .card2, .card3, .card4 {
+            transition: transform 0.3s cubic-bezier(0.4,2,0.6,1), box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .card1:hover, .card2:hover, .card3:hover, .card4:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.25);
+            z-index: 2;
+        }
+
+        /* Fullscreen card effect */
+        .card--fullscreen {
+            position: fixed !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) scale(1.08) !important;
+            width: 90vw !important;
+            height: 90vh !important;
+            max-width: 600px;
+            max-height: 95vh;
+            z-index: 2000 !important;
+            box-shadow: 0 0 0 8px #fbc2eb, 0 8px 48px 0 rgba(0,0,0,0.45);
+            transition: all 0.4s cubic-bezier(0.4,2,0.6,1);
+            cursor: zoom-out;
+            overflow: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1.08) translateY(0px);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.08) translateY(-10px);
+            }
+        }
+
+        .card--fullscreen h1 {
+            font-size: 2.5em !important;
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+
+        .card--fullscreen img {
+            max-height: 50vh !important;
+            width: auto !important;
+            max-width: 100% !important;
+            object-fit: contain;
+            margin: 20px auto;
+        }
+
+        .card--fullscreen ul {
+            font-size: 1.3em;
+            margin: 20px 0;
+            padding: 0 20px;
+        }
+
+        .card--fullscreen li {
+            margin: 10px 0;
+            padding: 8px 0;
+        }
+
+        .card--fullscreen p {
+            font-size: 1.4em;
+            margin: 20px 0;
+            padding: 15px;
+            line-height: 1.6;
+        }
+
+        .card-backdrop {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.35);
+            z-index: 1999;
+            animation: fadeInBackdrop 0.3s;
+        }
+
+        @keyframes fadeInBackdrop {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
